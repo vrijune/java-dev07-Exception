@@ -19,7 +19,7 @@ Industry Lab 07: Exception Handling
     ```
     ```text
     
-    
+    Not the ArithmeticException problem but the NullPointerException.
     
     
     
@@ -28,14 +28,25 @@ Industry Lab 07: Exception Handling
 2. Rewrite the following code, adding an appropriate try-catch block to it:
     ```java
     private void tryCatch02() {
+  
       int num1 = 120, num2 = 120, result = 0;
       result = num2 / (num1 - num2);
       System.out.println("Result: " + result);
     }
     ```
     ```text
-    
-    
+    private void tryCatch02() {
+   int num1 = 120, num2= 120, result = 0; 
+   try {result = num2 / (num1 - num2);
+   }
+    catch(ArithmeticException e){
+ System.out.println("Division by 0);
+
+ }
+ 
+ }
+} System.out.println("Result:"+result);
+}
     
     
     
@@ -51,8 +62,16 @@ Industry Lab 07: Exception Handling
     }
     ```
     ```text
-    
-    
+    private void tryCatch03() {
+    int result = 0;
+          String[] items = { "one", "two", null };
+   try{result = items[2].length();}
+   catch(NullPointerException e){
+System.out.println("Some kind of mistakes");
+}
+
+}System.out.println("Result: " + result);
+     }
     
     
     
@@ -74,8 +93,17 @@ Industry Lab 07: Exception Handling
     }
     ```
     ```text
-    
-    
+    private void tryCatch04() {
+    int num = 0;
+   try {    System.out.println("Enter number: ");
+                num = Integer.parseInt(Keyboard.readInput());
+                System.out.println("Thank you");
+              } catch (NumberFormatException e) {
+                System.out.println("Input error");
+                num = -1;
+              }
+              System.out.println("Number: " + num);
+            }
     
     
     
@@ -97,7 +125,21 @@ Industry Lab 07: Exception Handling
     }
     ```
     ```text
-    
+    private int tryCatch05() {
+          int result = 0;
+          String[] nums = { 2, 3, 4, -1, 4 };
+          int numbers = new int[]{2,3,4,-1,4};
+   try {
+           result = nums[nums[3]];
+           System.out.println("See you");
+         } catch(ArrayIndexOutOfBoundsException e)
+   {
+           System.out.println("Number error");
+           result = -1;
+         }
+         return result;
+       }
+   
     
     
     
@@ -128,7 +170,7 @@ Industry Lab 07: Exception Handling
     }
     ```
     ```text
-    
+    a c 
     
     
     
