@@ -31,7 +31,7 @@ public class RockPaperScissors {
 
                 // If the user quits, break out of the outerLoop to completely exit the game.
                 if (playerChoice == QUIT) {
-                    System.out.printf(playerName + " ran from the oncoming digital apocalypse. Hide, puny human. HIDE!!!");
+                    System.out.print(playerName + " ran from the oncoming digital apocalypse. Hide, puny human. HIDE!!!");
                     break outerLoop;
                 }
 
@@ -98,10 +98,35 @@ public class RockPaperScissors {
      * @return an int corresponding to the player's choice.
      */
     private int getPlayerChoice(String playerName) {
+        int num = 0;
+        String input = "";
         printMenu(playerName);
-        return Integer.parseInt(Keyboard.readInput());
-    }
 
+        while (num < 1 || num > 4)
+        {
+            input = (Keyboard.readInput()).toLowerCase();
+
+            if (input.equals("rock"))
+                num = 1;
+            else if (input.equals("paper"))
+                num = 2;
+            else if (input.equals("scissors"))
+                num = 3;
+            else if (input.equals("quit"))
+                num = 4;
+            else
+            {
+                try {
+                    num = Integer.parseInt(input);
+                } catch (NumberFormatException e) {
+                    System.out.println("You are not input the integer!");
+                }
+            }
+        }
+
+        return num;
+
+    }
     /**
      * Returns a random number between 1 and 3, which will represent the computer's choice for a round.
      * @return a value between 1 and 3, inclusive.

@@ -170,7 +170,7 @@ System.out.println("Some kind of mistakes");
     }
     ```
     ```text
-    a c 
+    C B Error
     
     
     
@@ -197,7 +197,13 @@ System.out.println("Some kind of mistakes");
     }
     ```
     ```text
-    
+    try {num = s.length();}
+   Catch(Exception e){
+System.out.println("C");
+
+}
+   
+
     
     
     
@@ -228,7 +234,7 @@ System.out.println("Some kind of mistakes");
     ```
     ```text
     
-    
+    C E B
     
     
     
@@ -255,7 +261,8 @@ System.out.println("Some kind of mistakes");
     ```
     ```text
     
-    
+    java.lang.NullPointerException:Null String
+    B 
     
     
     
@@ -285,7 +292,7 @@ System.out.println("Some kind of mistakes");
     ```
     ```text
     
-    
+    B
     
     
     

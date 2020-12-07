@@ -50,11 +50,28 @@ public class GuessingGame {
      * TODO Implement some error handling, for the cases where the user enters a value that's too big, too small, or
      * TODO not an integer. Change this method so it's guaranteed to return an integer between 1 & 100, inclusive.
      */
+
+
     private int getUserGuess() {
         System.out.print("Enter your guess: ");
-        return Integer.parseInt(Keyboard.readInput());
-    }
+        int guess = 0;
 
+        while (guess < 1 || guess > 100)
+        {
+            try {
+                guess = Integer.parseInt(Keyboard.readInput());
+                if (guess < 1 || guess > 100) {
+                    System.out.println("please enter a number between 1 and 100");
+                } else  {
+                    System.out.println("The guess is" + guess);
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("please enter a number between 1 and 100");
+            }
+        }
+
+        return guess;
+    }
     /**
      * Program entry point. Do not edit.
      */
